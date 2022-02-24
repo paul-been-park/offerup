@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :messages,
+             :foreign_key => "prospective_buyer_id",
+             :dependent => :destroy
+
   has_many   :listings,
              :foreign_key => "seller_id",
              :dependent => :destroy
