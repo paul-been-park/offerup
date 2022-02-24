@@ -9,6 +9,10 @@ class Message < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :conversation,
+             :through => :prospective_buyer,
+             :source => :listings
+
   has_one    :seller,
              :through => :listing,
              :source => :seller

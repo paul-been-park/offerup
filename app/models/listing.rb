@@ -9,6 +9,10 @@ class Listing < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :message,
+             :through => :seller,
+             :source => :messages
+
   has_many   :prospective_buyers,
              :through => :messages,
              :source => :prospective_buyer
