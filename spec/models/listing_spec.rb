@@ -12,6 +12,8 @@ RSpec.describe Listing, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:prospective_buyers) }
+
     end
 
     describe "Validations" do
