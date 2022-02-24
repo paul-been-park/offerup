@@ -9,6 +9,9 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :messages,
+             foreign_key: :prospective_buyer_id
+
   has_many   :listings,
              foreign_key: :seller_id
 

@@ -7,6 +7,9 @@ class MessageResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :prospective_buyer,
+             resource: UserResource
+
   # Indirect associations
 
 end
