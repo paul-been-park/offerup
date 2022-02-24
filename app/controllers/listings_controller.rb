@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
 
   # GET /listings
   def index
-    @listings = Listing.all
+    @listings = Listing.page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@listings.where.not(:location_latitude => nil)) do |listing, marker|
       marker.lat listing.location_latitude
       marker.lng listing.location_longitude
