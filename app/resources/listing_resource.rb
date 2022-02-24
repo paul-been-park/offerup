@@ -14,6 +14,8 @@ class ListingResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :messages
+
   belongs_to :seller,
              resource: UserResource
 
