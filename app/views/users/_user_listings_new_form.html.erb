@@ -1,0 +1,92 @@
+<!-- Form listing start -->
+<%= form_with(model: @listing, local: true) do |f| %>
+<!-- Form listing end -->
+
+  <!-- Label and input for seller_id start -->
+  <!-- Input for seller_id start -->
+  <%= f.hidden_field :seller_id, value: @user.id %>
+  <!-- Input for seller_id end -->
+  <!-- Label and input for seller_id end -->
+
+  <!-- Label and input for title start -->
+  <div class="form-group">
+    <%= f.label :title %>
+
+    <!-- Input for title start -->
+    <%= f.text_field :title, class: "form-control" %>
+    <!-- Input for title end -->
+  </div>
+  <!-- Label and input for title end -->
+
+  <!-- Label and input for listing_title start -->
+  <div class="form-group">
+    <%= f.label :listing_title %>
+
+    <!-- Input for listing_title start -->
+    <%= f.text_field :listing_title, class: "form-control" %>
+    <!-- Input for listing_title end -->
+  </div>
+  <!-- Label and input for listing_title end -->
+
+  <!-- Label and input for price start -->
+  <div class="form-group">
+    <%= f.label :price %>
+
+    <!-- Input for price start -->
+    <%= f.text_field :price, class: "form-control" %>
+    <!-- Input for price end -->
+  </div>
+  <!-- Label and input for price end -->
+
+  <!-- Label and input for category start -->
+  <div class="form-group">
+    <%= f.label :category %>
+
+    <!-- Input for category start -->
+    <%= f.text_field :category, class: "form-control" %>
+    <!-- Input for category end -->
+  </div>
+  <!-- Label and input for category end -->
+
+  <!-- Label and input for location start -->
+  <div class="form-group">
+    <%= f.label :location %>
+
+    <!-- Input for location start -->
+    <%= f.text_field :location, class: "form-control" %>
+    <!-- Input for location end -->
+  </div>
+  <!-- Label and input for location end -->
+
+  <!-- Label and input for status start -->
+  <div class="form-group">
+    <%= f.label :status %>
+
+    <!-- Input for status start -->
+    <%= f.text_field :status, class: "form-control" %>
+    <!-- Input for status end -->
+  </div>
+  <!-- Label and input for status end -->
+
+  <!-- Label and input for buyer_id start -->
+  <div class="form-group">
+    <%= f.label :buyer_id %>
+
+    <!-- Input for buyer_id start -->
+    <%= f.text_field :buyer_id, class: "form-control" %>
+    <!-- Input for buyer_id end -->
+  </div>
+  <!-- Label and input for buyer_id end -->
+
+  <!-- Label and input for picture start -->
+  <div class="form-group">
+    <%= f.label :picture %>
+
+    <!-- Input for picture start -->
+    <%= f.text_field :picture, class: "form-control" %>
+    <!-- Input for picture end -->
+  </div>
+  <!-- Label and input for picture end -->
+
+  <%= f.submit "Create listing", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

@@ -1,0 +1,22 @@
+<!-- Form message start -->
+<%= form_with(model: @message, local: true) do |f| %>
+<!-- Form message end -->
+
+  <!-- Label and input for listing_id start -->
+  <!-- Input for listing_id start -->
+  <%= f.hidden_field :listing_id, value: @listing.id %>
+  <!-- Input for listing_id end -->
+  <!-- Label and input for listing_id end -->
+
+  <!-- Label and input for prospective_buyer_id start -->
+  <div class="form-group">
+    <%= f.label :prospective_buyer_id %>
+
+    <!-- Input for prospective_buyer_id start -->
+    <%= f.text_field :prospective_buyer_id, class: "form-control" %>
+    <!-- Input for prospective_buyer_id end -->
+  </div>
+  <!-- Label and input for prospective_buyer_id end -->
+
+  <%= f.submit "Create message", class: "btn btn-block btn-outline-secondary" %>
+<% end %>
