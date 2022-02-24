@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  # Direct associations
+  
+  include JwtToken
+# Direct associations
 
   has_many   :messages,
              :foreign_key => "prospective_buyer_id",
