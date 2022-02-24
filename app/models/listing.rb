@@ -1,4 +1,6 @@
 class Listing < ApplicationRecord
+  mount_base64_uploader :picture, PictureUploader
+
   # Direct associations
 
   has_many   :messages,
