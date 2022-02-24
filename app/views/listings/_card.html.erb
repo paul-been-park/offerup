@@ -32,7 +32,11 @@
 
       <dt>Location</dt>
       <!-- Display location start -->
-      <dd><%= listing.location %></dd>
+      <dd>
+        <div>
+          <%= render partial: "listings/one_photo_map" %>
+        </div>
+      </dd>
       <!-- Display location end -->
 
       <dt>Status</dt>
