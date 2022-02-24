@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "listings#index"
   resources :messages
   resources :listings
   devise_for :users
