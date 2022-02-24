@@ -61,16 +61,20 @@
 
       <!-- Edit link listing start -->
       <div class="col">
-        <%= link_to edit_listing_url(listing), class: "btn btn-block btn-outline-secondary" do %>
-          <i class="fas fa-edit"></i>
+        <% if current_user == @listing.seller %>
+          <%= link_to edit_listing_url(listing), class: "btn btn-block btn-sm btn-outline-secondary" do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
         <% end %>
       </div>
       <!-- Edit link listing end -->
 
       <!-- Delete link listing start -->
       <div class="col">
-        <%= link_to listing, method: :delete, data: { confirm: "Do you really want to delete this listing?" }, class: "btn btn-block btn-outline-secondary" do %>
-          <i class="fas fa-trash-alt"></i>
+        <% if current_user == @listing.seller %>
+          <%= link_to listing, method: :delete, data: { confirm: "Do you really want to delete this listing?" }, class: "btn btn-block btn-outline-secondary" do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
         <% end %>
       </div>
       <!-- Delete link listing end -->
