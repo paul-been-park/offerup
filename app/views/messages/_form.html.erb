@@ -42,7 +42,7 @@
 
     <%= f.label :prospective_buyer_id %>
     <!-- Input for prospective_buyer_id start -->
-    <%= f.number_field :prospective_buyer_id, class: prospective_buyer_class, placeholder: "Enter prospective buyer" %>
+    <%= f.collection_select :prospective_buyer_id, User.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for prospective_buyer_id end -->
     <% if prospective_buyer_was_invalid %>
       <% message.errors.full_messages_for(:prospective_buyer).each do |message| %>
