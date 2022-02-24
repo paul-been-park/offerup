@@ -21,6 +21,7 @@ class ListingResource < ApplicationResource
 
   # Indirect associations
 
+  has_one    :message
   many_to_many :prospective_buyers,
                resource: UserResource
 

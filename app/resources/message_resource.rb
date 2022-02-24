@@ -14,6 +14,8 @@ class MessageResource < ApplicationResource
 
   # Indirect associations
 
+  has_one    :conversation,
+             resource: ListingResource
   has_one    :seller,
              resource: UserResource
 
