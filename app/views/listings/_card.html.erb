@@ -6,59 +6,41 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Seller</dt>
-      <!-- Display seller_id start -->
       <dd>
         <% if @listing.seller.present? %>
           <%= link_to listing.seller, listing.seller %>
         <% end %>
       </dd>
-      <!-- Display seller_id end -->
 
       <dt>Title</dt>
-      <!-- Display title start -->
       <dd><%= listing.title %></dd>
-      <!-- Display title end -->
 
       <dt>Listing title</dt>
-      <!-- Display listing_title start -->
       <dd><%= listing.listing_title %></dd>
-      <!-- Display listing_title end -->
 
       <dt>Price</dt>
-      <!-- Display price start -->
       <dd><%= listing.price %></dd>
-      <!-- Display price end -->
 
       <dt>Category</dt>
-      <!-- Display category start -->
       <dd><%= listing.category %></dd>
-      <!-- Display category end -->
 
       <dt>Location</dt>
-      <!-- Display location start -->
       <dd>
         <div>
           <%= render partial: "listings/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display location end -->
 
       <dt>Status</dt>
-      <!-- Display status start -->
       <dd><%= listing.status %></dd>
-      <!-- Display status end -->
 
       <dt>Buyer</dt>
-      <!-- Display buyer_id start -->
       <dd><%= listing.buyer_id %></dd>
-      <!-- Display buyer_id end -->
 
       <dt>Picture</dt>
-      <!-- Display picture start -->
       <dd>
         <%= cl_image_tag @listing.picture, class: "img-fluid" %>
       </dd>
-      <!-- Display picture end -->
 
     </dl>
 
@@ -67,7 +49,6 @@
         <%= link_to_show_or_back listing, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link listing start -->
       <div class="col">
         <% if current_user == @listing.seller %>
           <%= link_to edit_listing_url(listing), class: "btn btn-block btn-sm btn-outline-secondary" do %>
@@ -75,9 +56,7 @@
           <% end %>
         <% end %>
       </div>
-      <!-- Edit link listing end -->
 
-      <!-- Delete link listing start -->
       <div class="col">
         <% if current_user == @listing.seller %>
           <%= link_to listing, method: :delete, data: { confirm: "Do you really want to delete this listing?" }, class: "btn btn-block btn-outline-secondary" do %>
@@ -85,7 +64,6 @@
           <% end %>
         <% end %>
       </div>
-      <!-- Delete link listing end -->
     </div>
   </div>
 

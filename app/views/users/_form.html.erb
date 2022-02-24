@@ -1,7 +1,6 @@
 <% was_validated = user.errors.any? %>
 
 <%= form_with(model: user, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for name start -->
   <div class="form-group">
     <% name_class = "form-control" %>
     <% name_was_invalid = user.errors.include?(:name) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :name %>
-    <!-- Input for name start -->
     <%= f.text_field :name, class: name_class, placeholder: "Enter name" %>
-    <!-- Input for name end -->
     <% if name_was_invalid %>
       <% user.errors.full_messages_for(:name).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for name end -->
-  <!-- Label and input for prospective_buyer_id start -->
   <div class="form-group">
     <% prospective_buyer_class = "form-control" %>
     <% prospective_buyer_was_invalid = user.errors.include?(:prospective_buyer) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :prospective_buyer_id %>
-    <!-- Input for prospective_buyer_id start -->
     <%= f.text_field :prospective_buyer_id, class: prospective_buyer_class, placeholder: "Enter prospective buyer" %>
-    <!-- Input for prospective_buyer_id end -->
     <% if prospective_buyer_was_invalid %>
       <% user.errors.full_messages_for(:prospective_buyer).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,6 +45,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for prospective_buyer_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>
