@@ -17,6 +17,14 @@ class UserResource < ApplicationResource
 
   # Indirect associations
 
+  has_many :conversations, resource: MessageResource do
+    assign_each do |user, messages|
+      messages.select do |m|
+        m.id.in?(user.conversations.map(&:id))
+      end
+    end
+  end
+
   many_to_many :item_listings,
                resource: ListingResource
 
