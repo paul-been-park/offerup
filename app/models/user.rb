@@ -11,6 +11,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :conversations,
+             :through => :listings,
+             :source => :messages
+
   has_many   :item_listings,
              :through => :messages,
              :source => :listing

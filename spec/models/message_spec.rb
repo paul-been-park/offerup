@@ -12,6 +12,8 @@ RSpec.describe Message, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:seller) }
+
     end
 
     describe "Validations" do
