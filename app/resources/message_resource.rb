@@ -21,7 +21,7 @@ class MessageResource < ApplicationResource
 
   filter :seller_id, :integer do
     eq do |scope, value|
-      scope.eager_load(:seller).where(:listings => {:seller_id => value})
+      scope.eager_load(:seller).where(listings: { seller_id: value })
     end
   end
 end

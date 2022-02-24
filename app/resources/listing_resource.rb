@@ -24,5 +24,4 @@ class ListingResource < ApplicationResource
   has_one    :message
   many_to_many :prospective_buyers,
                resource: UserResource
-
 end

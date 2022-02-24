@@ -27,5 +27,4 @@ class UserResource < ApplicationResource
 
   many_to_many :item_listings,
                resource: ListingResource
-
 end

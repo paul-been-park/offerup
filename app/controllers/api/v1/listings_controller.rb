@@ -13,7 +13,7 @@ class Api::V1::ListingsController < Api::V1::GraphitiController
     listing = ListingResource.build(params)
 
     if listing.save
-      render jsonapi: listing, status: 201
+      render jsonapi: listing, status: :created
     else
       render jsonapi_errors: listing
     end
@@ -33,7 +33,7 @@ class Api::V1::ListingsController < Api::V1::GraphitiController
     listing = ListingResource.find(params)
 
     if listing.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: listing
     end

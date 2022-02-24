@@ -1,24 +1,18 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Listing, type: :model do
-  
-    describe "Direct Associations" do
-
+  describe "Direct Associations" do
     it { should have_many(:messages) }
 
     it { should belong_to(:seller) }
+  end
 
-    end
-
-    describe "InDirect Associations" do
-
+  describe "InDirect Associations" do
     it { should have_one(:message) }
 
     it { should have_many(:prospective_buyers) }
+  end
 
-    end
-
-    describe "Validations" do
-
-    end
+  describe "Validations" do
+  end
 end
