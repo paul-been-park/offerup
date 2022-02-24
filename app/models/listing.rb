@@ -1,6 +1,9 @@
 class Listing < ApplicationRecord
   # Direct associations
 
+  belongs_to :seller,
+             :class_name => "User"
+
   # Indirect associations
 
   # Validations
