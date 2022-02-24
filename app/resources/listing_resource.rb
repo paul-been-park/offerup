@@ -14,6 +14,9 @@ class ListingResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :seller,
+             resource: UserResource
+
   # Indirect associations
 
 end

@@ -9,6 +9,9 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :listings,
+             foreign_key: :seller_id
+
   # Indirect associations
 
 end
